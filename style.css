@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&family=Satisfy&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Satisfy', cursive; */
+
 body {
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
