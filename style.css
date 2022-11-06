@@ -8,17 +8,43 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-gradient: linear-gradient(to right, #FCCB90, #D57EEB);
+    --primary-white: #f6f6f6;
+    --primary-black: #131313;
+    --transparent-bg: rgba(255, 255, 255, 0.08);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 body {
     display: flex;
-    padding: 96px;
+    padding-top: 64px;
+    padding-bottom: 16px;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    background: #131313;
-    color: #f6f6f6;
+    background: var(--primary-black);
+    color: var(--primary-white);
+}
+
+p {
+    line-height: 1.7rem;
+}
+
+/* header starts here */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
@@ -27,15 +53,183 @@ body {
     padding: 0 10px;
     font-family: 'Satisfy', cursive;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 48px;
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(to right, #FCCB90, #D57EEB);
+    background: var(--primary-gradient);
     -webkit-background-clip: text;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
-.about{
+.about {
     position: relative;
     text-align: center;
-    margin-bottom: 144px;
+    margin-bottom: 96px;
 }
+
+/* header ends here */
+
+/* input-form starts here */
+.username_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.username_form input {
+    width: 800px;
+    height: 36px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 16px 0;
+    padding: 4px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    background: var(--primary-white);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    outline: none;
+    padding: 8px 32px;
+    border-radius: 5px;
+    background: var(--primary-gradient);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn i {
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+/* input-form ends here */
+
+/* user-profile starts here */
+.user-profile {
+    position: relative;
+    margin: 72px 0;
+}
+
+.user-profile .profile {
+    display: flex;
+    align-items: center;
+    background: var(--transparent-bg);
+    padding: 16px 64px;
+    border-radius: 5px;
+}
+
+.imgBx {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-profile .profile .user-info {
+    margin: 8px 32px;
+}
+
+/* user-profile ends here */
+
+/* query-btns starts here */
+.query-btns {
+    display: flex;
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.query-btns .btn {
+    background: transparent;
+    border: 1px solid var(--primary-white);
+    color: var(--primary-white);
+    margin: 0 16px;
+    transition: background 0.1s ease;
+}
+
+.query-btns .btn.active {
+    color: var(--primary-black);
+    background: var(--primary-gradient);
+}
+
+.query-btns .btn:not(.active):hover {
+    background: var(--transparent-bg);
+}
+
+/* query-btns ends here */
+
+/* profile-carousel starts here */
+.profile-carousel {
+    position: relative;
+}
+
+.profile-carousel .carousel {
+    display: flex;
+    background: var(--transparent-bg);
+    border-radius: 5px;
+}
+
+.profile-carousel .carousel .content {
+    display: flex;
+    padding: 24px 48px;
+    /* background: var(--transparent-bg); */
+}
+
+.profile-carousel .carousel .content .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 8px;
+    padding: 16px 24px;
+    border-radius: 5px;
+    background: var(--transparent-bg);
+}
+
+.profile-carousel .carousel .carousel-btns {
+    display: none;
+}
+
+
+/* profile-carousel ends here */
+
+/* footer starts here  */
+footer {
+    position: relative;
+    margin-top: auto;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0;
+}
+
+footer .name {
+    font-weight: 600;
+    margin-left: 25px;
+}
+
+footer .links {
+    margin-left: 25px;
+}
+
+footer a {
+    color: var(--primary-white);
+    text-decoration: underline;
+}
+
+footer i {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+footer .bxs-copyright {
+    font-size: 16px;
+}
+
+/* footer ends here  */

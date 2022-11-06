@@ -5,29 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram app</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header start here -->
     <header>
       <h1 class="logo">InstaQ</h1>
+
+      <section class="about">
+        <p>
+          This tool makes it easier to learn specifics about any Instagram user.
+        </p>
+        <p>You only need to input the username to get started.</p>
+        <p>
+          Notably, this tool currently has limited functionality; an improvement
+          may be made in the future.
+        </p>
+      </section>
     </header>
-    <section class="about">
-      <p>
-        This tool makes it easier to learn specifics about any Instagram user.
-      </p>
-      <p>You only need to input the username to get started.</p>
-      <p>
-        Notably, this tool currently has limited functionality; an improvement
-        may be made in the future.
-      </p>
-    </section>
+    <!-- Header ends here -->
+    <!-- input-form starts here -->
     <section class="form_input">
-        <form>
-            <label for="username">Enter a username to get info about the user:</label>
-            <input type="text" name="username" id="username">
-            <button type="submit">Get Info</button>
-        </form>
+      <form class="username_form">
+        <label for="username"
+          >Enter a username to get info about the user:</label
+        >
+        <input type="text" name="username" id="username" />
+        <button type="submit" class="btn form-btn">
+          Get Info <i class="bx bx-search"></i>
+        </button>
+      </form>
     </section>
+    <!-- input-form ends here -->
+    <!-- user-profile starts here -->
+    <section class="user-profile">
+      <div class="profile">
+        <div class="imgBx">
+          <img src="avatar.png" id="user_img" alt="" />
+        </div>
+        <div class="user-info">
+          <p id="userName">manikarnika.reddi</p>
+          <p id="userFullName">Manikarnika Reddi</p>
+          <p id="userId">42232112</p>
+        </div>
+      </div>
+    </section>
+    <!-- user-profile ends here -->
+    <!-- query-btns starts here -->
+    <section class="query-btns">
+      <button class="btn active" id="getFollowers">User's Followers</button>
+      <button class="btn" id="getFollowing">User's Following</button>
+      <button class="btn" id="getRecentPost">User's Recent Post</button>
+      <button class="btn" id="getRelatedProfiles">
+        Similar Profiles as this user
+      </button>
+    </section>
+    <!-- query-btns ends here -->
+    <!-- profile-carousel starts here -->
+    <section class="profile-carousel">
+      <div class="carousel">
+        <div class="content">
+          <div class="profile">
+            <div class="imgBx">
+              <img src="avatar.png" alt="" />
+            </div>
+            <p id="userName">smith.jordan.02</p>
+            <p id="userFullName">Smith Jordan</p>
+          </div>
+          <div class="profile">
+            <div class="imgBx">
+              <img src="avatar.png" alt="" />
+            </div>
+            <p id="userName">smith.jordan.02</p>
+            <p id="userFullName">Smith Jordan</p>
+          </div>
+          <div class="profile">
+            <div class="imgBx">
+              <img src="avatar.png" alt="" />
+            </div>
+            <p id="userName">smith.jordan.02</p>
+            <p id="userFullName">Smith Jordan</p>
+          </div>
+          <div class="profile">
+            <div class="imgBx">
+              <img src="avatar.png" alt="" />
+            </div>
+            <p id="userName">smith.jordan.02</p>
+            <p id="userFullName">Smith Jordan</p>
+          </div>
+        </div>
+        <div class="carousel-btns">
+          <button><i class='btn-left bx bx-chevron-left'></i></button>
+          <button><i class='btn-right bx bx-chevron-right'></i></button>
+        </div>
+      </div>
+    </section>
+    <!-- profile-carousel ends here -->
+    <!-- post-details starts here -->
+    <!-- post-details ends here -->
+    <!-- footer starts here -->
+    <footer>
+      <div>
+        <p>
+          Designed and Developed by <span class="name">Rohit Kumar Mahato</span>
+        </p>
+      </div>
+      <div>
+        <p>Follow me on</p>
+        <div class="links">
+          <a href="https://www.instagram.com/kumarohit9/" target="_blank"
+            ><i class="bx bxl-instagram-alt"></i></a
+          ><a href="https://github.com/rohit7461" target="_blank"
+            ><i class="bx bxl-github"></i></a
+          ><a href="https://twitter.com/devRohitMahato" target="_blank"
+            ><i class="bx bxl-twitter"></i></a
+          ><a href="https://codepen.io/uhocjtlf-the-bold" target="_blank"
+            ><i class="bx bxl-codepen"></i
+          ></a>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span
+            ><i class="bx bxs-copyright"></i>Copyright
+            <a
+              href="https://rohitmahato.netlify.app"
+              target="_blank"
+              class="name"
+              >Rohit</a
+            >
+            - All rights reserved (2022 - <span id="yearLog"></span>)</span
+          >
+        </p>
+      </div>
+    </footer>
+    <!-- footer ends here -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
   </body>
