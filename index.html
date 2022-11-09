@@ -44,7 +44,7 @@
     <!-- Header ends here -->
     <!-- input-form starts here -->
     <section class="form_input">
-      <form class="username_form">
+      <form class="username_form" id="userForm">
         <label for="username"
           >Enter a username to get info about the user:</label
         >
@@ -59,7 +59,7 @@
     <section class="user-profile">
       <div class="profile">
         <div class="imgBx">
-          <img src="avatar.png" id="user_img" alt="" />
+          <img src="avatar.png" id="userImg" alt="" />
         </div>
         <div class="user-info">
           <p id="userName">manikarnika.reddi</p>
@@ -71,10 +71,10 @@
     <!-- user-profile ends here -->
     <!-- query-btns starts here -->
     <section class="query-btns">
-      <button class="btn active" id="getFollowers">User's Followers</button>
-      <button class="btn" id="getFollowing">User's Following</button>
-      <button class="btn" id="getRecentPost">User's Recent Post</button>
-      <button class="btn" id="getRelatedProfiles">
+      <button class="btn active" id="followerBtn">User's Followers</button>
+      <button class="btn" id="followingBtn">User's Following</button>
+      <button class="btn" id="recentBtn">User's Recent Post</button>
+      <button class="btn" id="relatedBtn">
         Similar Profiles as this user
       </button>
     </section>
@@ -82,7 +82,7 @@
     <!-- profile-carousel starts here -->
     <section class="profile-carousel">
       <div class="carousel">
-        <div class="content">
+        <div class="content" id="profileBox">
           <div class="profile">
             <div class="imgBx">
               <img src="avatar.png" alt="" />
@@ -121,7 +121,7 @@
     <!-- profile-carousel ends here -->
     <!-- post-details starts here -->
     <section class="post-details">
-      <div class="container">
+      <div class="container" id="postContainer">
         <div class="post-box"></div>
         <p><i class="bx bx-map"></i><span id="location">Location</span></p>
         <p id="viewCount">26 views</p>
