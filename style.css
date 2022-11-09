@@ -57,6 +57,7 @@ header {
     -webkit-text-fill-color: transparent;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     margin-bottom: 24px;
 }
 
@@ -164,9 +165,12 @@ header {
 /* profile-carousel starts here */
 .profile-carousel {
     position: relative;
+    display: none;
+    margin-bottom: 48px;
 }
 
 .profile-carousel .carousel {
+    position: relative;
     display: flex;
     background: var(--transparent-bg);
     border-radius: 5px;
@@ -174,8 +178,7 @@ header {
 
 .profile-carousel .carousel .content {
     display: flex;
-    padding: 24px 48px;
-    /* background: var(--transparent-bg); */
+    padding: 32px 40px;
 }
 
 .profile-carousel .carousel .content .profile {
@@ -188,12 +191,71 @@ header {
     background: var(--transparent-bg);
 }
 
-.profile-carousel .carousel .carousel-btns {
-    display: none;
+.profile-carousel .carousel .content .profile .imgBx {
+    margin-bottom: 16px;
 }
 
+.profile-carousel .carousel .btn-left,
+.profile-carousel .carousel .btn-right {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.profile-carousel .carousel .btn-left {
+    left: 0;
+}
 
 /* profile-carousel ends here */
+
+/* post-details starts here */
+.post-details {
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.post-details .container {
+    position: relative;
+    width: 600px;
+    background: var(--transparent-bg);
+    border-radius: 5px;
+    padding: 24px 32px;
+}
+
+.post-details .container .post-box {
+    width: 100%;
+    height: 500px;
+    background: var(--transparent-bg);
+    border-radius: 5px;
+}
+
+.post-details .container .comment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-details .container .comment .imgBx {
+    height: 80px;
+    width: 80px;
+}
+
+.post-details .container .comment .comment-content {
+    padding: 8px 16px;
+    width: 450px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+/* post-details ends here */
 
 /* footer starts here  */
 footer {
@@ -210,7 +272,6 @@ footer div {
 }
 
 footer .name {
-    font-weight: 600;
     margin-left: 25px;
 }
 
