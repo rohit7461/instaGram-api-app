@@ -48,7 +48,13 @@
         <label for="username"
           >Enter a username to get info about the user:</label
         >
-        <input type="text" name="username" id="username" />
+        <input
+          type="text"
+          name="username"
+          autocomplete="off"
+          id="formUsername"
+          required
+        />
         <button type="submit" class="btn form-btn">
           Get Info <i class="bx bx-search"></i>
         </button>
@@ -56,15 +62,15 @@
     </section>
     <!-- input-form ends here -->
     <!-- user-profile starts here -->
-    <section class="user-profile">
+    <section class="user-profile active" id="userProfile">
       <div class="profile">
-        <div class="imgBx">
+        <!-- <div class="imgBx">
           <img src="avatar.png" id="userImg" alt="" />
-        </div>
+        </div> -->
         <div class="user-info">
-          <p id="userName">manikarnika.reddi</p>
-          <p id="userFullName">Manikarnika Reddi</p>
-          <p id="userId">42232112</p>
+          <p>Username: <span id="userName">manikarnika.reddi</span></p>
+          <!-- <p id="userFullName">Manikarnika Reddi</p> -->
+          <p>UserId: <span id="userId">42232112</span></p>
         </div>
       </div>
     </section>
@@ -74,9 +80,7 @@
       <button class="btn active" id="followerBtn">User's Followers</button>
       <button class="btn" id="followingBtn">User's Following</button>
       <button class="btn" id="recentBtn">User's Recent Post</button>
-      <button class="btn" id="relatedBtn">
-        Similar Profiles as this user
-      </button>
+      <button class="btn" id="relatedBtn">Similar Profiles as this user</button>
     </section>
     <!-- query-btns ends here -->
     <!-- profile-carousel starts here -->
@@ -87,28 +91,28 @@
             <div class="imgBx">
               <img src="avatar.png" alt="" />
             </div>
-            <p id="userName">smith.jordan.02</p>
+            <p id="userNameP">smith.jordan.02</p>
             <p id="userFullName">Smith Jordan</p>
           </div>
           <div class="profile">
             <div class="imgBx">
               <img src="avatar.png" alt="" />
             </div>
-            <p id="userName">smith.jordan.02</p>
+            <p>smith.jordan.02</p>
             <p id="userFullName">Smith Jordan</p>
           </div>
           <div class="profile">
             <div class="imgBx">
               <img src="avatar.png" alt="" />
             </div>
-            <p id="userName">smith.jordan.02</p>
+            <p>smith.jordan.02</p>
             <p id="userFullName">Smith Jordan</p>
           </div>
           <div class="profile">
             <div class="imgBx">
               <img src="avatar.png" alt="" />
             </div>
-            <p id="userName">jordan.02</p>
+            <p>jordan.02</p>
             <p id="userFullName">S Jordan</p>
           </div>
         </div>
