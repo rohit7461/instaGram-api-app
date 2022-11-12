@@ -14,7 +14,7 @@ const profileBox = document.getElementById("profileBox");
 const postContainer = document.getElementById("postContainer");
 const userProfile = document.getElementById("userProfile");
 const qBtns = document.getElementById("qBtns");
-
+const profileCarousel = document.getElementById("profileCarousel");
 let currentUser = { userId: 40945130922, username: "imaginative.creator" };
 
 // class to store data of a profile
@@ -110,7 +110,7 @@ followerBtn.addEventListener("click", () => {
   const reqOptions = {
     method: "GET",
     url: "https://instagram47.p.rapidapi.com/user_followers",
-    params: { userid: currentUser.userId },
+    params: { userid: currentUser.userId, limit: 50 },
     headers: {
       "X-RapidAPI-Key": "d5bf355edfmshb977900a20e61eap196580jsne2d9278b8865",
       "X-RapidAPI-Host": "instagram47.p.rapidapi.com",
@@ -125,8 +125,25 @@ followerBtn.addEventListener("click", () => {
   getUFollowers()
     .then((res) => {
       console.log(res);
-      const profiles = res.data.body.users;
-      console.log(profiles)
+      const profiles = res.data.body.edges;
+      // console.log(profiles);
+
+      profiles.forEach((item) => {
+        profileBox.innerHTML += `<div class="profile">
+        <div class="imgBx">
+          <img crossorigin="anonymous" src="${item.node.profile_pic_url}" alt="profile_pic" />
+        </div>
+        <div>
+          ${item.node.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
+          item.node.is_private ? `<i class="bx bxs-badge-check"></i>` : ""
+        }
+        </div>
+        <p id="userNameP">${item.node.username}</p>
+        <p id="userFullName">${item.node.full_name}</p>
+      </div>`;
+      });
+
+      profileCarousel.classList.add("active");
     })
     .catch((err) => {
       console.log(err);
@@ -134,53 +151,53 @@ followerBtn.addEventListener("click", () => {
 });
 
 // get public user post
-recentBtn.addEventListener("click", () => {
-  const reqOptions = {
-    method: "GET",
-    url: "https://instagram47.p.rapidapi.com/public_user_posts",
-    params: { userid: currentUser.userId },
-    headers: {
-      "X-RapidAPI-Key": "d5bf355edfmshb977900a20e61eap196580jsne2d9278b8865",
-      "X-RapidAPI-Host": "instagram47.p.rapidapi.com",
-    },
-  };
+// recentBtn.addEventListener("click", () => {
+//   const reqOptions = {
+//     method: "GET",
+//     url: "https://instagram47.p.rapidapi.com/public_user_posts",
+//     params: { userid: currentUser.userId },
+//     headers: {
+//       "X-RapidAPI-Key": "d5bf355edfmshb977900a20e61eap196580jsne2d9278b8865",
+//       "X-RapidAPI-Host": "instagram47.p.rapidapi.com",
+//     },
+//   };
 
-  const getUPosts = async () => {
-    const res = await axios.request(reqOptions);
-    return res;
-  };
+//   const getUPosts = async () => {
+//     const res = await axios.request(reqOptions);
+//     return res;
+//   };
 
-  getUPosts()
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+//   getUPosts()
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
 
-// get related profiles
-relatedBtn.addEventListener("click", () => {
-  const reqOptions = {
-    method: "GET",
-    url: "https://instagram47.p.rapidapi.com/related_profiles",
-    params: { username: currentUser.username },
-    headers: {
-      "X-RapidAPI-Key": "d5bf355edfmshb977900a20e61eap196580jsne2d9278b8865",
-      "X-RapidAPI-Host": "instagram47.p.rapidapi.com",
-    },
-  };
+// // get related profiles
+// relatedBtn.addEventListener("click", () => {
+//   const reqOptions = {
+//     method: "GET",
+//     url: "https://instagram47.p.rapidapi.com/related_profiles",
+//     params: { username: currentUser.username },
+//     headers: {
+//       "X-RapidAPI-Key": "d5bf355edfmshb977900a20e61eap196580jsne2d9278b8865",
+//       "X-RapidAPI-Host": "instagram47.p.rapidapi.com",
+//     },
+//   };
 
-  const getURelated = async () => {
-    const res = await axios.request(reqOptions);
-    return res;
-  };
+//   const getURelated = async () => {
+//     const res = await axios.request(reqOptions);
+//     return res;
+//   };
 
-  getURelated()
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+//   getURelated()
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
