@@ -131,7 +131,7 @@ followerBtn.addEventListener("click", () => {
       profiles.forEach((item) => {
         profileBox.innerHTML += `<div class="profile">
         <div class="imgBx">
-          <img crossorigin="anonymous" src="${item.node.profile_pic_url}" alt="profile_pic" />
+          <img src="${item.node.profile_pic_url}" alt="profile_pic" />
         </div>
         <div>
           ${item.node.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
