@@ -65,6 +65,7 @@ header {
     position: relative;
     text-align: center;
     margin-bottom: 96px;
+    max-width: 70vw;
 }
 
 /* header ends here */
@@ -78,7 +79,7 @@ header {
 }
 
 .username_form input {
-    width: 800px;
+    width: 70vw;
     height: 36px;
     border-radius: 5px;
     border: none;
@@ -145,12 +146,16 @@ header {
 
 /* query-btns starts here */
 .query-btns {
-    display: flex;
+    display: none;
     position: relative;
-    margin-bottom: 48px;
+    margin-bottom: 48px ;
 }
 
-.query-btns .btn {
+.query-btns.active{
+    display: flex;
+}
+
+.btn {
     background: transparent;
     border: 1px solid var(--primary-white);
     color: var(--primary-white);
@@ -158,7 +163,7 @@ header {
     transition: background 0.1s ease;
 }
 
-.query-btns .btn.active {
+.btn.active {
     color: var(--primary-black);
     background: var(--primary-gradient);
 }
@@ -176,6 +181,10 @@ header {
     margin-bottom: 48px;
 }
 
+.profile-carousel.active{
+    display: block;
+}
+
 .profile-carousel .carousel {
     position: relative;
     display: flex;
@@ -185,14 +194,19 @@ header {
 
 .profile-carousel .carousel .content {
     display: flex;
+    max-width: 95vw;
     padding: 32px 40px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .profile-carousel .carousel .content .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 8px;
+    justify-content: center;
+
+    margin: 8px;
     padding: 16px 24px;
     border-radius: 5px;
     background: var(--transparent-bg);
@@ -202,7 +216,7 @@ header {
     margin-bottom: 16px;
 }
 
-.profile-carousel .carousel .btn-left,
+/* .profile-carousel .carousel .btn-left,
 .profile-carousel .carousel .btn-right {
     position: absolute;
     display: flex;
@@ -213,7 +227,7 @@ header {
     cursor: pointer;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-}
+} */
 
 .profile-carousel .carousel .btn-left {
     left: 0;
@@ -226,6 +240,10 @@ header {
     position: relative;
     display: none;
     margin-bottom: 48px;
+}
+
+.post-details.active{
+    display: block;
 }
 
 .post-details .container {
@@ -257,6 +275,13 @@ header {
 .post-details .container .comment .comment-content {
     padding: 8px 16px;
     width: 450px;
+}
+
+.post-details .post-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
 }
 
 .name {
