@@ -108,6 +108,8 @@ followingBtn.addEventListener("click", () => {
     })
     .catch((err) => {
       console.log(err);
+      profileBox.innerHTML = userProfile.innerHTML = `<p>Error: ${err.message}<p>`; // when there is an error on request.
+      profileCarousel.classList.add("active");
     });
 });
 
@@ -155,6 +157,8 @@ followerBtn.addEventListener("click", () => {
     })
     .catch((err) => {
       console.log(err);
+      profileBox.innerHTML = userProfile.innerHTML = `<p>Error: ${err.message}<p>`; // when there is an error on request.
+      profileCarousel.classList.add("active");
     });
 });
 
