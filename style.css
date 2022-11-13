@@ -327,3 +327,19 @@ footer .bxs-copyright {
 }
 
 /* footer ends here  */
+
+/* rwd starts here */
+@media (max-width: 428px) {
+    .user-profile .profile{
+        padding: 8px 24px;
+    }
+
+    .btn{
+        margin: 0 4px;
+        padding: 8px 16px;
+    }
+
+    footer .name{
+        margin-left: 4px;
+    }
+}

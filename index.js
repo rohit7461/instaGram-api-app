@@ -15,18 +15,7 @@ const postContainer = document.getElementById("postContainer");
 const userProfile = document.getElementById("userProfile");
 const qBtns = document.getElementById("qBtns");
 const profileCarousel = document.getElementById("profileCarousel");
-let currentUser = { userId: 40945130922, username: "imaginative.creator" };
-
-// class to store data of a profile
-class Profile {
-  constructor(isPrivate, userId, picUrl, fullName, userName) {
-    this.isPrivate = isPrivate;
-    this.userId = userId;
-    this.picUrl = picUrl;
-    this.fullName = fullName;
-    this.userName = userName;
-  }
-}
+let currentUser = {};
 
 // year for the footer section
 const date = new Date();
@@ -99,6 +88,23 @@ followingBtn.addEventListener("click", () => {
   getUFollowing()
     .then((res) => {
       console.log(res);
+      profileBox.innerHTML = "";
+      const profiles = res.data.body.users;
+      // console.log(profiles);
+
+      profiles.forEach((item) => {
+        profileBox.innerHTML += `<div class="profile">
+        <div>
+          ${item.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
+          item.is_private ? `<i class="bx bxs-badge-check"></i>` : ""
+        }
+        </div>
+        <p id="userNameP">${item.username}</p>
+        <p id="userFullName">${item.full_name}</p>
+      </div>`;
+      });
+
+      profileCarousel.classList.add("active");
     })
     .catch((err) => {
       console.log(err);
@@ -125,14 +131,16 @@ followerBtn.addEventListener("click", () => {
   getUFollowers()
     .then((res) => {
       console.log(res);
+      profileBox.innerHTML = "";
+      if (!Array.isArray(res.data.body.edges)) {
+        profileBox.innerHTML = "Error! Try again";
+        return;
+      }
       const profiles = res.data.body.edges;
       // console.log(profiles);
 
       profiles.forEach((item) => {
         profileBox.innerHTML += `<div class="profile">
-        <div class="imgBx">
-          <img src="${item.node.profile_pic_url}" alt="profile_pic" />
-        </div>
         <div>
           ${item.node.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
           item.node.is_private ? `<i class="bx bxs-badge-check"></i>` : ""
@@ -149,6 +157,8 @@ followerBtn.addEventListener("click", () => {
       console.log(err);
     });
 });
+
+// The functions below these are disable due to some some problems with the api
 
 // get public user post
 // recentBtn.addEventListener("click", () => {
