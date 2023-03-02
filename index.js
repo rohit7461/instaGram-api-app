@@ -96,7 +96,7 @@ followingBtn.addEventListener("click", () => {
         profileBox.innerHTML += `<div class="profile">
         <div>
           ${item.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
-          item.is_private ? `<i class="bx bxs-badge-check"></i>` : ""
+          item.is_private ? `<i class='bx bxs-lock-alt'></i>` : ""
         }
         </div>
         <p id="userNameP">${item.username}</p>
