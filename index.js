@@ -95,9 +95,7 @@ followingBtn.addEventListener("click", () => {
       profiles.forEach((item) => {
         profileBox.innerHTML += `<div class="profile">
         <div>
-          ${item.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
-          item.is_private ? `<i class='bx bxs-lock-alt'></i>` : ""
-        }
+          ${item.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""} ${item.is_private ? `<i class='bx bxs-lock-alt'></i>` : ""}
         </div>
         <p id="userNameP">${item.username}</p>
         <p id="userFullName">${item.full_name}</p>
@@ -144,9 +142,7 @@ followerBtn.addEventListener("click", () => {
       profiles.forEach((item) => {
         profileBox.innerHTML += `<div class="profile">
         <div>
-          ${item.node.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""}${
-          item.node.is_private ? `<i class='bx bxs-lock-alt'></i>` : ""
-        }
+          ${item.node.is_verified ? `<i class="bx bxs-badge-check"></i>` : ""} ${item.node.is_private ? `<i class='bx bxs-lock-alt'></i>` : ""}
         </div>
         <p id="userNameP">${item.node.username}</p>
         <p id="userFullName">${item.node.full_name}</p>
